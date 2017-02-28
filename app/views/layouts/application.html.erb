@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShippedProject</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<%= render "layouts/navbar" %>
+
+  	<div class="container">
+  	<div class="stepwizard">
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">1</button>
+            <p>Sign up / Sign in</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle">2</button>
+            <p>Choose items to be shipped</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">3</button>
+            <p>Origin</p>
+        </div> 
+         <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">4</button>
+            <p>Boats availability</p>
+          </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle" disabled="disabled">5</button>
+            <p>Confirmation</p>
+        </div> 
+    </div>
+</div>
+
+    </div>
+    	<%= yield %>
+
+  </body>
+</html>
