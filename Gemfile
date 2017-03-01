@@ -14,6 +14,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'city-state'
+#gem 'country_state_select', '~> 3.0','>=3.0.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

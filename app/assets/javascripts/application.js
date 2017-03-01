@@ -16,3 +16,38 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+$("document").ready(function() {
+
+
+
+
+
+
+
+
+	$(".unhide-button").click(function() {
+	$(".desc").show(1000)
+	
+
+})
+
+	$(".unhide-button").click(function() {
+	$(".desc").hide(1000)
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
+

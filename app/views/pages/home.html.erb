@@ -3,6 +3,6 @@
 <hr>
 
 <% if current_user %>
-	<h1>DUUUMMMAAA</h1>
 	<%= current_user.email %>
+	<%= link_to "create a job", new_job_path %>
 <% end %>
