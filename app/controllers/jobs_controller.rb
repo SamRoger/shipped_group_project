@@ -4,20 +4,21 @@ class JobsController < ApplicationController
 	end
 
 	def new
+
 		@job = Job.new
+
 	end
 
 	def create
-		job = Job.new
-		job.description = jobs_params[:description]
-		job.origin = jobs_params[:origin]
-		job.destination = jobs_params[:destination]
-		job.cost = jobs_params[:cost]
-		job.boat_id = jobs_params[:boat_id]
-
-		job.save
-
-		redirect_to job
+		if current_user
+			new_params = jobs_params.merge(user_id: current_user.id)
+			job = Job.new(new_params)
+			
+			job.save
+			redirect_to job_path(job)
+		else
+			#do some error logic
+		end
 	end
 
 	def show
@@ -29,7 +30,7 @@ class JobsController < ApplicationController
 		@job = Job.find(params[:id]) 
 		@job.destroy
 
-		redirect_to job_path
+		redirect_to root_path
 	end
 		
 
@@ -37,7 +38,7 @@ class JobsController < ApplicationController
 	private
 
 	def jobs_params
-		params.require(:job).permit(:description, :origin, :destination, :quantity, :cost, :boat_id)
+		params.require(:job).permit(:description, :origin, :destination, :id, :quantity, :cost, :boat_id)
 		
 	end
 end
