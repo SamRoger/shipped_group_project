@@ -1,7 +1,12 @@
+<ul>
 <% @jobs.each do |job| %>
-	<%= job %>
+<li><%= job.description %></li>
+<li><%= job.origin %><li>
+	<%= job.destination %>
+	<%= job.quantity %>
 
 	<br>
-	
+
 	<%= link_to "edit job", edit_job_path(job) %>
 <% end %>
+</ul>
