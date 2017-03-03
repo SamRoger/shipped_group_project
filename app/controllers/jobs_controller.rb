@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 	def index
-		
+		@jobs = Job.all
 	end
 
 	def new
@@ -15,12 +15,13 @@ class JobsController < ApplicationController
 			new_params = jobs_params.merge(user_id: current_user.id)
 
 			@job = Job.new(new_params)
-			
+			@job.user_id = current_user.id
 			if @job.save
+
 				redirect_to job_path(@job)
 			else
 				flash[:notice] = @job.errors
-				render "new"
+				redirect_to :back
 			end
 
 		else
@@ -43,7 +44,7 @@ class JobsController < ApplicationController
 
 	def edit
 		@job = Job.find(params[:id])
-		
+
 	end
 
 	def update

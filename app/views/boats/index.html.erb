@@ -1,0 +1,16 @@
+<h1>Boats</h1>
+
+<% if signed_in? %>
+	<%= form_for @boat, url: boats_path, html: { multipart: true } do |form| %>
+	 <%= form.file_field :image %>
+
+	 <%= form.submit %>
+	<% end %>
+<% end %>
+
+
+<% if signed_in? %>
+	<% @boats.each do |boat| %>
+		<%= image_tag boat.image.url(:medium) if boat.user_id == current_user.id %>
+	<% end %>
+<% end %>
