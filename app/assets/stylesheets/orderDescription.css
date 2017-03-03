@@ -1,0 +1,16 @@
+td, th {
+    border: 2px solid #dddddd;
+    text-align: center !important;
+    padding: 8px;
+}
+
+table {
+	text-align: center;
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+
+body {
+	position: relative;
+	top: 50px;
+}
