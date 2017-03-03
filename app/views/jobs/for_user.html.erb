@@ -1,0 +1,7 @@
+<% @jobs.each do |job| %>
+	<%= job %>
+
+	<br>
+	
+	<%= link_to "edit job", edit_job_path(job) %>
+<% end %>

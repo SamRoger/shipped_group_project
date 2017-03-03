@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
   	@users = User.all
-  	@job = Job.new
+  	@jobs = Job.all
   end
 end

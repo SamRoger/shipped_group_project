@@ -34,6 +34,12 @@ class JobsController < ApplicationController
 	end
 		
 
+		def for_user
+			@user = User.find(params[:user_id])
+
+			@jobs = @user.jobs
+		end
+
 
 	private
 
